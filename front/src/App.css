@@ -1,0 +1,19 @@
+.title{
+  color: rgb(71, 71, 236);
+  font-size: 20px;
+}
+
+h1{
+  position: relative;
+  left: 50%;
+}
+
+.button{
+    position: relative;
+    left: 85%;
+    background-color: rgb(56, 158, 56);
+    color: white;
+    width: 200px;
+    border-radius: 5px;
+
+}

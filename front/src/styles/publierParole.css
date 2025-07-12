@@ -1,0 +1,29 @@
+input{
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+textarea{
+    border-radius: 5px;
+
+}
+
+form{
+    position: relative;
+    left: 90%;
+}
+button{
+    position: relative;
+    left: 13%;
+    width: 200px;
+    background-color: rgb(14, 122, 155);
+    color: white;
+    border-radius: 12px;
+}
+
+h3{
+    position: relative;
+    left: 90%;
+}
+
