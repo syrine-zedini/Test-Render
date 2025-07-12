@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import dotenv from 'dotenv'
 
 function AfficherUsers({  count,onclick }){
     const [data,setdata]=useState([]);
