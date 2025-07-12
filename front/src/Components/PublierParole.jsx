@@ -13,6 +13,8 @@ function PublierParole(){
 
    //Etats pour stocker les message du reussi ou d'echec lorsq d'envoye des donn"es vers l'api
         const [message,setMessage]=useState("");
+            const backendUrl = import.meta.env.VITE_BACKEND_URI || 'http://localhost:4000';
+
 
  //Gérer le changement de l'etat du formulaire
         const handleChange =(e)=>{
@@ -27,7 +29,7 @@ function PublierParole(){
          const handleSubmit =(e)=>{
             e.preventDefault();
             axios 
-            .post('http://localhost:4000/api/addParole', formData)
+            .post(`${backendUrl}/api/addParole`, formData)
             .then((response)=>{
                 setMessage(response.data.message);
                 setFormData({titre:"",

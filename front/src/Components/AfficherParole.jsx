@@ -1,15 +1,18 @@
-import '../styles/publierParole.css'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import '../styles/publierParole.css'; // Make sure this path is correct
 
 function AfficherParole() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    
+    // Correct way to access environment variables in React (Vite or Create-React-App)
+    const backendUrl = import.meta.env.VITE_BACKEND_URI || 'http://localhost:4000';
 
     const fetchDataParole = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/api/listeParole');
+            const response = await axios.get(`${backendUrl}/api/listeParole`);
             setData(response.data);
             setLoading(false);
         } catch (error) {
@@ -34,7 +37,7 @@ function AfficherParole() {
                         key={index}
                         className="bg-white shadow-md rounded-md p-4 border border-gray-200"
                     >
-                        <h3 className="text-xl font-semibold text-gray-800">{item.titre}</h3>
+                        <h3 className="text-xl font-semibold text-gray-800">{item.Titre}</h3>
                         <p className="text-gray-700 mt-2 whitespace-pre-line">{item.parole}</p>
                         <span className="text-sm text-gray-500">Publié par : Auteur inconnu</span>
                     </li>

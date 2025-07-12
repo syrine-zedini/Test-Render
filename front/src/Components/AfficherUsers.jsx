@@ -1,14 +1,18 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import dotenv from 'dotenv'
 
 function AfficherUsers({  count,onclick }){
     const [data,setdata]=useState([]);
     const [loading,setLoading]=useState(true);
     const [error,setError]=useState(null);
+
+        const backendUrl = import.meta.env.VITE_BACKEND_URI || 'http://localhost:4000';
+
  
     const fetchData= async()=>{
      try{
-       const response= await axios.get('http://localhost:4000/api/listeUsers');
+       const response= await axios.get(`${backendUrl}/api/listeUsers`);
        setdata(response.data);
        setLoading(false);
  
